@@ -10,13 +10,17 @@ public class StringCalculator {
         if (numbers.length() == 1)
             return Integer.parseInt(numbers);
         // two numbers case
-        if (numbers.length() == 3)
-            return Integer.parseInt(numbers.split(",")[0]) + Integer.parseInt(numbers.split(",")[1]);
+        if (numbers.length() >= 3) {
+
+            for (String i : numbers.split(",")) {
+                ans += Integer.parseInt(i);
+            }
+        }
 
         return ans;
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(add("1,2"));
+        System.out.println(add("1,2,3,4"));
     }
 }
